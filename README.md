@@ -1,6 +1,6 @@
 # Pizzabot
 
-Instructions for delivering pizza with pizzabot.
+This is a gem for instructions to Pizzabot.
 In more specific terms, given a grid (where each point on the grid is one house) and a list of points representing houses in need of pizza delivery, it returns a list of instructions for getting Pizzabot to those locations and delivering.
 
 ## Installation
