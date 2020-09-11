@@ -1,32 +1,34 @@
 RSpec.describe Pizzabot do
-  subject(:pizzabot) { PizzaBot.new(['5x5 (1, 3) (4, 4)']) }
+  subject { PizzaBot.new(['5x5 (1, 3) (4, 4)']) }
 
   describe 'initialize' do
+    it { is_expected.to have_attributes(input_string: ['5x5', '1', '3', '4', '4'] ) }
+    
     context 'with regex' do
       it 'receives the grid values' do
-        expect(pizzabot.send(:grid)).to eq([5, 5])
+        expect(subject.send(:grid)).to contain_exactly(5, 5)
       end
 
       it 'receives location values' do
-        expect(pizzabot.send(:locations)).to eq([1, 3, 4, 4])
+        expect(subject.send(:locations)).to contain_exactly(1, 3, 4, 4)
       end
     end
   end
 
   describe 'validate locations' do
     it 'has x and y locations on the grid' do
-      expect(pizzabot.send(:valid_location?)).to be true
+      expect(subject.send(:valid_location?)).to be true
     end
 
     context 'has location off the grid' do
-      let(:pizzabot_off) { PizzaBot.new(['5x5 (1, 3) (6, 4)']) }
+      let(:pizzabot) { PizzaBot.new(['5x5 (1, 3) (6, 4)']) }
 
       it 'does not pass validation' do
-        expect(pizzabot_off.send(:valid_location?)).to be false
+        expect(pizzabot.send(:valid_location?)).to be false
       end
 
       it 'can not make delivery' do
-        expect(pizzabot_off.instructions).to eq('Location is out of grid!')
+        expect(pizzabot.instructions).to eq('Location is out of grid!')
       end
     end
   end
@@ -34,34 +36,38 @@ RSpec.describe Pizzabot do
   describe 'gets directions' do
     context 'moving east-west' do
       it 'moves east' do
-        expect(pizzabot.send(:x_direction, 1, 0)).to eq 'E'
+        expect(subject.send(:x_direction, 1, 0)).to eq 'E'
       end
 
       it 'moves west' do
-        expect(pizzabot.send(:x_direction, 0, 1)).to eq 'W'
+        expect(subject.send(:x_direction, 0, 1)).to eq 'W'
       end
     end
 
     context 'moving north-south' do
       it 'moves north' do
-        expect(pizzabot.send(:y_direction, 1, 0)).to eq 'N'
+        expect(subject.send(:y_direction, 1, 0)).to eq 'N'
       end
 
       it 'moves south' do
-        expect(pizzabot.send(:y_direction, 0, 1)).to eq 'S'
+        expect(subject.send(:y_direction, 0, 1)).to eq 'S'
       end
     end
 
     context 'makes a drop' do
-      it 'drops at 0' do
+      it 'drops at the location' do
         expect(PizzaBot.new(['5x5 (0, 0)']).send(:xy_directions, '', 0, 0)).to eq 'D'
       end
     end
   end
 
-  describe 'prints out the instructions' do
-    it 'gives instructions to Pizzabot' do
-      expect(pizzabot.instructions).to eq 'ENNNDEEEND'
+  describe 'lists the instructions' do
+    let(:instructions) { subject.instructions }
+    it { expect(instructions).to start_with 'E' }
+    it { expect(instructions).to end_with 'D' }
+
+    it 'gives correct instructions to Pizzabot' do
+      expect(instructions).to eq 'ENNNDEEEND'
     end
   end
 end

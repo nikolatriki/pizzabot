@@ -3,11 +3,10 @@ class PizzaBot
   attr_reader :input_string
 
   def initialize(args)
-    input_string = args[0]
-    if input_string.match REGEX_VALID_INPUT
-      @input_string = (input_string.delete '(,)').split
+    if args[0].match REGEX_VALID_INPUT
+      @input_string = (args[0].delete '(,)').split
     else
-      p "Input argument must be in the form of '1x1 (1, 1)...'"
+      puts "Input argument must be in the form of '1x1 (1, 1)...'"
       exit
     end
   end
@@ -81,5 +80,4 @@ class PizzaBot
     true
   end
 end
-# obj = PizzaBot.new(['5x5 (1, 3)'])
-# p obj.instructions
+

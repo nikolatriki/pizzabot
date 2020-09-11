@@ -2,4 +2,4 @@
 require_relative 'instructions'
 
 pizzabot = PizzaBot.new(ARGV)
-p pizzabot.instructions
+puts pizzabot.instructions
