@@ -16,15 +16,17 @@ rbenv install 2.6.6
 
 You should be using [Bundler](https://github.com/bundler/bundler):
 ```shell
-bundle in
-stall
+bundle install
 ```
 
 ## Usage
 
 To run pizza bot open the tar file with `tar zxvf pizzabot`command.
+From the root directory, navigate to
 ```shell
-From the root directory, navigate to `lib/pizzabot`and type
+`lib/pizzabot`
+```
+and type
 ```shell
 `./pizzabot "5x5 (0, 0) (1, 3) (4, 4) (4, 2) (4, 2) (0, 1) (3, 2) (2, 3) (4, 1)"`
 Pizzabot lists the instructions!
