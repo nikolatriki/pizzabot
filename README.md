@@ -22,12 +22,15 @@ stall
 
 ## Usage
 
-To run pizza bot open the tar file using``` tar zxvf pizzabot ```command.
+To run pizza bot open the tar file with `tar zxvf pizzabot`command.
 ```shell
-From the root directory, navigate to ``` lib/pizzabot ```and type ./pizzabot "5x5 (0, 0) (1, 3) (4, 4) (4, 2) (4, 2) (0, 1) (3, 2) (2, 3) (4, 1)"
+From the root directory, navigate to `lib/pizzabot`and type
+```shell
+`./pizzabot "5x5 (0, 0) (1, 3) (4, 4) (4, 2) (4, 2) (0, 1) (3, 2) (2, 3) (4, 1)"`
 Pizzabot lists the instructions!
 ```
-The corect output for these is: ``` DENNNDEEENDSSDDWWWWSDEEENDWNDEESSD```
+
+The corect output for these is: `DENNNDEEENDSSDDWWWWSDEEENDWNDEESSD`
 
 Tests are written with Rspec, cd to root and run ``` rspec ```.
 
