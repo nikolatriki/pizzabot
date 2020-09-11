@@ -80,4 +80,3 @@ class PizzaBot
     true
   end
 end
-
