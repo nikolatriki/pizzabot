@@ -2,7 +2,7 @@ RSpec.describe Pizzabot do
   subject { PizzaBot.new(['5x5 (1, 3) (4, 4)']) }
 
   describe 'initialize' do
-    it { is_expected.to have_attributes(input_string: ['5x5', '1', '3', '4', '4'] ) }
+    it { is_expected.to have_attributes(input_string: ['5x5', '1', '3', '4', '4']) }
     context 'with regex' do
       it 'receives the grid values' do
         expect(subject.send(:grid)).to contain_exactly(5, 5)

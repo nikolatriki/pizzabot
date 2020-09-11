@@ -9,14 +9,14 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{ Instructions for delivering pizza with pizzabot. }
   spec.description   = %q{ On a 5 x 5 grid, given grid coordinates, the pizzabot function will return a list with directions for reaching the coordinates.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
-  spec.metadata["allowed_push_host"] = "TODO"
+  spec.metadata["allowed_push_host"] = "TODO: Set to 'https://github.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = ""
-  spec.metadata["changelog_uri"] = ""
+  spec.metadata["source_code_uri"] = "https://github.com"
+  spec.metadata["changelog_uri"] = "https://github.com"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

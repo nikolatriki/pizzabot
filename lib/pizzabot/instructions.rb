@@ -6,7 +6,7 @@ class PizzaBot
     if args[0].match REGEX_VALID_INPUT
       @input_string = (args[0].delete '(,)').split
     else
-      puts "Input argument must be in the form of '1x1 (1, 1)...'"
+      puts "Sorry, input argument must be in the form of '1x1 (0, 0) (1, 0)...'"
       exit
     end
   end
