@@ -24,11 +24,11 @@ bundle install
 To run pizza bot open the tar file with `tar zxvf pizzabot`command.
 From the root directory, navigate to
 ```shell
-`lib/pizzabot`
+lib/pizzabot
 ```
 and type
 ```shell
-`./pizzabot "5x5 (0, 0) (1, 3) (4, 4) (4, 2) (4, 2) (0, 1) (3, 2) (2, 3) (4, 1)"`
+./pizzabot "5x5 (0, 0) (1, 3) (4, 4) (4, 2) (4, 2) (0, 1) (3, 2) (2, 3) (4, 1)"
 Pizzabot lists the instructions!
 ```
 
